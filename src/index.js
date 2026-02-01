@@ -1,9 +1,7 @@
-const ffmpeg = require("fluent-ffmpeg");
+const { spawn } = require("child_process");
 const ffmpegPath = require("ffmpeg-static");
 const fs = require("fs");
 const path = require("path");
-
-ffmpeg.setFfmpegPath(ffmpegPath);
 
 function videoToFrames({
   videoPath,
@@ -20,12 +18,20 @@ function videoToFrames({
   }
 
   return new Promise((resolve, reject) => {
-    ffmpeg(videoPath)
-      .outputOptions([`-vf fps=${fps}`])
-      .output(path.join(outputDir, pattern))
-      .on("end", resolve)
-      .on("error", reject)
-      .run();
+    const args = [
+      "-i", videoPath,
+      "-vf", `fps=${fps}`,
+      path.join(outputDir, pattern)
+    ];
+
+    const ffmpeg = spawn(ffmpegPath, args);
+
+    ffmpeg.on("close", code => {
+      if (code === 0) resolve();
+      else reject(new Error(`FFmpeg exited with code ${code}`));
+    });
+
+    ffmpeg.on("error", reject);
   });
 }
 
