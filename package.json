@@ -1,6 +1,6 @@
 {
   "name": "video-to-frames",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extract frames from videos using FFmpeg (auto-bundled)",
   "main": "src/index.js",
   "bin": {
