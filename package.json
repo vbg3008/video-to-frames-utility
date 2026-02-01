@@ -1,0 +1,23 @@
+{
+  "name": "video-to-frames",
+  "version": "1.0.0",
+  "description": "Extract frames from videos using FFmpeg (auto-bundled)",
+  "main": "src/index.js",
+  "bin": {
+    "extract-frames": "cli.js"
+  },
+  "keywords": [
+    "ffmpeg",
+    "video",
+    "frames",
+    "kling",
+    "ai-video",
+    "video-processing"
+  ],
+  "author": "Vignesh Gawali",
+  "license": "MIT",
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}
