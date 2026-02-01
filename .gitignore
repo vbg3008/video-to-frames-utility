@@ -5,3 +5,5 @@ frames
 *.jpg
 .npmignore
 videoToFramesLocal.js
+video-to-frames-1.0.0.tgz
+*.tgz

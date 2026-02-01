@@ -14,7 +14,19 @@
     "ai-video",
     "video-processing"
   ],
-  "author": "Vignesh Gawali",
+  "author": {
+    "name": "Vignesh Gawali",
+    "email": "vbg3008@gmail.com",
+    "url": "https://github.com/vbg3008"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vbg3008/video-to-frames-utility"
+  },
+  "bugs": {
+    "url": "https://github.com/vbg3008/video-to-frames-utility/issues"
+  },
+  "homepage": "https://github.com/vbg3008/video-to-frames-utility#readme",
   "license": "MIT",
   "dependencies": {
     "ffmpeg-static": "^5.2.0",
